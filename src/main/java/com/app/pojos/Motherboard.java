@@ -34,6 +34,9 @@ public class Motherboard extends Product {
 	@Column(length=50)
 	private String color;
 	
+	@Column(length = 50)
+	private String chipset;
+	
 	
 	public Motherboard() {
 		super();
@@ -41,7 +44,7 @@ public class Motherboard extends Product {
 
 
 	public Motherboard(int id, String socket, FormFactor formFactor, int maxMemory, int memorySlots,
-			String color,String name, String manufacturer, String brand, float price, boolean isAvailable) {
+			String color,String name, String manufacturer, String brand, float price, boolean isAvailable,String chipset) {
 		super(name, manufacturer, brand, price, isAvailable);
 		
 		this.id = id;
@@ -49,7 +52,7 @@ public class Motherboard extends Product {
 		this.formFactor = formFactor;
 		this.maxMemory = maxMemory;
 		this.memorySlots = memorySlots;
-		
+		this.chipset = chipset;
 		this.color = color;
 	}
 
@@ -59,21 +62,19 @@ public class Motherboard extends Product {
 	}
 
 
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
 
 
 	public String getSocket() {
 		return socket;
 	}
 
+
 	public void setSocket(String socket) {
 		this.socket = socket;
 	}
-
 
 
 	public FormFactor getFormFactor() {
@@ -81,11 +82,9 @@ public class Motherboard extends Product {
 	}
 
 
-
 	public void setFormFactor(FormFactor formFactor) {
 		this.formFactor = formFactor;
 	}
-
 
 
 	public int getMaxMemory() {
@@ -93,11 +92,9 @@ public class Motherboard extends Product {
 	}
 
 
-
 	public void setMaxMemory(int maxMemory) {
 		this.maxMemory = maxMemory;
 	}
-
 
 
 	public int getMemorySlots() {
@@ -105,15 +102,14 @@ public class Motherboard extends Product {
 	}
 
 
-
 	public void setMemorySlots(int memorySlots) {
 		this.memorySlots = memorySlots;
 	}
 
+
 	public String getColor() {
 		return color;
 	}
-
 
 
 	public void setColor(String color) {
@@ -121,11 +117,23 @@ public class Motherboard extends Product {
 	}
 
 
+	public String getChipset() {
+		return chipset;
+	}
+
+
+	public void setChipset(String chipset) {
+		this.chipset = chipset;
+	}
+
+
 	@Override
 	public String toString() {
-		return "Motherboard [    "+super.toString()+   "   id=" + id + ", socket=" + socket + ", formFactor=" + formFactor + ", maxMemory="
-				+ maxMemory + ", memorySlots=" + memorySlots + ", color=" + color + "]";
+		return "Motherboard [id=" + id + ", socket=" + socket + ", formFactor=" + formFactor + ", maxMemory="
+				+ maxMemory + ", memorySlots=" + memorySlots + ", color=" + color + ", chipset=" + chipset + "]";
 	}
+
+
 	
 	
 	
