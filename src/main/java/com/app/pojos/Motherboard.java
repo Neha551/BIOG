@@ -34,6 +34,8 @@ public class Motherboard extends Product {
 	@Column(length=50)
 	private String color;
 	
+	@Column(length=50)
+	private String chipset;
 	
 	public Motherboard() {
 		super();
@@ -41,15 +43,15 @@ public class Motherboard extends Product {
 
 
 	public Motherboard(int id, String socket, FormFactor formFactor, int maxMemory, int memorySlots,
-			String color,String name, String manufacturer, String brand, float price, boolean isAvailable) {
+			String color,String chipset,String name, String manufacturer, String brand, float price, boolean isAvailable) {
 		super(name, manufacturer, brand, price, isAvailable);
-		
+		 
 		this.id = id;
 		this.socket = socket;
 		this.formFactor = formFactor;
 		this.maxMemory = maxMemory;
 		this.memorySlots = memorySlots;
-		
+		 this.chipset=chipset;
 		this.color = color;
 	}
 
@@ -121,10 +123,20 @@ public class Motherboard extends Product {
 	}
 
 
+	public String getChipset() {
+		return chipset;
+	}
+
+
+	public void setChipset(String chipset) {
+		this.chipset = chipset;
+	}
+
+
 	@Override
 	public String toString() {
-		return "Motherboard [    "+super.toString()+   "   id=" + id + ", socket=" + socket + ", formFactor=" + formFactor + ", maxMemory="
-				+ maxMemory + ", memorySlots=" + memorySlots + ", color=" + color + "]";
+		return "Motherboard [       "+super.toString()+"        id=" + id + ", socket=" + socket + ", formFactor=" + formFactor + ", maxMemory="
+				+ maxMemory + ", memorySlots=" + memorySlots + ", color=" + color + ", chipset=" + chipset + "]";
 	}
 	
 	
