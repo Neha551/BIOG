@@ -2,7 +2,7 @@ package com.app.services;
 
 import java.util.List;
 
-import com.app.pojos.Cpu;
+import com.app.pojos.core.Cpu;
 
 
 public interface ICPUService {

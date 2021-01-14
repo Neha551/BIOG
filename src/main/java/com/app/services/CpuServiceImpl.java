@@ -6,13 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.app.pojos.Cpu;
+import com.app.pojos.core.Cpu;
 import com.app.repositories.ICpuRepository;
 
 @Service
 @Transactional
 public class CpuServiceImpl  implements ICPUService{
      
+	
 	@Autowired
 	private ICpuRepository cpuRepo;
 	
