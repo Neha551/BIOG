@@ -3,10 +3,11 @@ package com.app.services.core;
 import java.util.List;
 
 import com.app.pojos.core.Cpu;
+import com.app.pojos.core.Product;
 
 
 public interface ICPUService {
-	List<Cpu> getAllCpu();
+	List<Product> getAllCpu();
 
 	Cpu getCpuById(int id);
 

@@ -1,5 +1,6 @@
 package com.app.services.core;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.app.pojos.core.Cpu;
+import com.app.pojos.core.Product;
 import com.app.repositories.core.ICpuRepository;
 
 @Service
@@ -23,10 +25,12 @@ public class CpuServiceImpl  implements ICPUService{
 
 	
 	@Override
-	public List<Cpu> getAllCpu() {
+	public List<Product> getAllCpu() {
 		
-		return cpuRepo.findAll();
-	}
+		 List<Product> list  = new ArrayList<Product>();
+		 cpuRepo.findAll().forEach(p->list.add(p));
+		 return list;
+		 }
 
 	@Override
 	public Cpu getCpuById(int id) {

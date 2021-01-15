@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.pojos.core.Cpu;
+import com.app.pojos.core.Product;
 import com.app.services.core.ICPUService;
 
 @RestController
@@ -16,10 +18,15 @@ public class TestController {
 
 	@Autowired
 	private ICPUService  service;
-
-	@GetMapping("/")
-	public List<Cpu> showCpu() {     //controller nhi banana
-		return service.getAllCpu();
+//  /product/cpu
+	@GetMapping("/{type}")
+	public List<Product> showCpu(@PathVariable String type) {     //controller nhi banana
+		
+		if(type.equals("cpu")) {
+			return service.getAllCpu();	
+		}
+		return null;
+		
 	}
 	
 }
