@@ -1,4 +1,4 @@
-package com.app.services.core;
+package com.app.services.core.implemenations;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +8,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.app.custom_exceptions.ProductNotFoundException;
+import com.app.entities.core.CPUCooler;
 import com.app.entities.core.Cpu;
 import com.app.entities.core.Product;
 import com.app.repositories.core.ICpuRepository;
+import com.app.services.core.interfaces.ICPUService;
+
 import java.util.Optional;
 
 @Service
@@ -64,8 +67,8 @@ public class CpuServiceImpl implements ICPUService {
 	}
 
 	@Override
-	public Cpu createCpu(Cpu obj) {
-
+	public Product createCpu(Cpu obj) {
+		
 		return cpuRepo.save(obj);
 
 	}

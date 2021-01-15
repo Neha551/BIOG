@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.app.entities.core.Cpu;
 import com.app.entities.core.Product;
-import com.app.services.core.ICPUService;
+import com.app.services.core.interfaces.ICPUService;
 import com.app.utils.ProductConstants;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;

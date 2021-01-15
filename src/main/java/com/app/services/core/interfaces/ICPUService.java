@@ -1,4 +1,4 @@
-package com.app.services.core;
+package com.app.services.core.interfaces;
 
 import java.util.List;
 

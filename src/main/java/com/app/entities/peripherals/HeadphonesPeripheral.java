@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @Entity
 @Table(name="headphone_peripheral")
 @JsonPropertyOrder(alphabetic = true)
-public class HeaphonesPeripheral extends Product {
+public class HeadphonesPeripheral extends Product {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
@@ -40,13 +40,13 @@ public class HeaphonesPeripheral extends Product {
 	
 	
 	
-	public HeaphonesPeripheral() {
+	public HeadphonesPeripheral() {
 		super();
 	}
 
 
 
-	public HeaphonesPeripheral(int id, HeadphoneTypes type, int frequencyResponse, boolean isMicrophone,
+	public HeadphonesPeripheral(int id, HeadphoneTypes type, int frequencyResponse, boolean isMicrophone,
 			boolean isWireless, String enclosureType, String color,String name, String manufacturer, String brand, float price, boolean isAvailable,String imageUrl) {
 		super(name, manufacturer, brand, price, isAvailable,imageUrl,color);
 		

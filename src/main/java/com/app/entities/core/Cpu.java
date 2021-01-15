@@ -15,8 +15,8 @@ public class Cpu extends Product{
 		private int id;
 		
 		//6,8,12,10..
-		@Column(name="core_count",length=50)
-		private String coreCount;
+		@Column(name="core_count")
+		private int coreCount;
 		
 		//GHz
 		@Column(name="core_clock",length=50)
@@ -42,7 +42,7 @@ public class Cpu extends Product{
 		
 
 
-		public Cpu(int id, String coreCount, float coreClock, int tdp, boolean integratedGraphics,
+		public Cpu(int id, int coreCount, float coreClock, int tdp, boolean integratedGraphics,
 				boolean simMultiThread, String graphicsType,String name, String manufacturer, String brand, float price, boolean isAvailable, String imageUrl,
 				String color) {
 			super(name, manufacturer, brand, price, isAvailable, imageUrl, color);
@@ -65,11 +65,11 @@ public class Cpu extends Product{
 			this.id = id;
 		}
 
-		public String getCoreCount() {
+		public int getCoreCount() {
 			return coreCount;
 		}
 
-		public void setCoreCount(String coreCount) {
+		public void setCoreCount(int coreCount) {
 			this.coreCount = coreCount;
 		}
 
