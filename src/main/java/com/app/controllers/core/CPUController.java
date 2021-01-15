@@ -34,7 +34,7 @@ public class CPUController {
 
 	@GetMapping("/{type}")
 	public List<Product> showAllCpuDetails(@PathVariable String type) {
-		if (type.equalsIgnoreCase(ProductConstants.CPU))
+		if (type.equalsIgnoreCase(ProductConstants.CORE_CPU))
 			return service.getAllCpu();
 		return null;
 	}
@@ -60,7 +60,7 @@ public class CPUController {
 
 	@PostMapping("/{type}")
 	public Product createProduct(@RequestBody String product, @PathVariable String type) {
-		if (type.equalsIgnoreCase(ProductConstants.CPU)) {
+		if (type.equalsIgnoreCase(ProductConstants.CORE_CPU)) {
 			try {
 				Cpu newCpu = new ObjectMapper().readValue(product, Cpu.class);
 				service.createCpu(newCpu);
