@@ -2,7 +2,8 @@ package com.app.services;
 
 import java.util.List;
 
-import com.app.pojos.Motherboard;
+import com.app.pojos.core.Motherboard;
+
 
 public interface IMotherboardService {
 	List<Motherboard> getAllMotherboard();
