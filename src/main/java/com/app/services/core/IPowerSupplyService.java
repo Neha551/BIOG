@@ -2,7 +2,7 @@ package com.app.services.core;
 
 import java.util.List;
 
-import com.app.pojos.core.PowerSupply;
+import com.app.entities.core.PowerSupply;
 
 public interface IPowerSupplyService {
 	List<PowerSupply> getAllPowerSupply();

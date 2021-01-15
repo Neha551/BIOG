@@ -2,7 +2,7 @@ package com.app.services.core;
 
 import java.util.List;
 
-import com.app.pojos.core.Storage;
+import com.app.entities.core.Storage;
 
 public interface IStorageService {
 	List<Storage> getAllStorage();

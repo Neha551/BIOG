@@ -7,7 +7,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.app.pojos.core.CPUCase;
+import com.app.entities.core.CPUCase;
 import com.app.repositories.core.ICpuCaseRepository;
 
 @Service

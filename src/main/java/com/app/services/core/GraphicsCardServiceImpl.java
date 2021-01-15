@@ -7,7 +7,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.app.pojos.core.GraphicsCard;
+import com.app.entities.core.GraphicsCard;
 import com.app.repositories.core.IGraphicsCardRepository;
 
 @Service

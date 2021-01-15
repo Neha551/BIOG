@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.app.pojos.core.Motherboard;
+import com.app.entities.core.Motherboard;
 import com.app.repositories.core.IMotherBoardRepository;
 
 @Service

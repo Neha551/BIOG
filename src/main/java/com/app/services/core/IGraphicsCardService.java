@@ -2,7 +2,7 @@ package com.app.services.core;
 
 import java.util.List;
 
-import com.app.pojos.core.GraphicsCard;
+import com.app.entities.core.GraphicsCard;
 
 public interface IGraphicsCardService {
 	List<GraphicsCard> getAllGraphicsCard();

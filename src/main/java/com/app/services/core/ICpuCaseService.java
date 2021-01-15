@@ -2,7 +2,7 @@ package com.app.services.core;
 
 import java.util.List;
 
-import com.app.pojos.core.CPUCase;
+import com.app.entities.core.CPUCase;
 
 public interface ICpuCaseService {
 	

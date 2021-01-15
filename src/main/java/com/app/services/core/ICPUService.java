@@ -2,18 +2,19 @@ package com.app.services.core;
 
 import java.util.List;
 
-import com.app.pojos.core.Cpu;
+import com.app.entities.core.Cpu;
+import com.app.entities.core.Product;
 
 
 public interface ICPUService {
-	List<Cpu> getAllCpu();
+	List<Product> getAllCpu();
 
-	Cpu getCpuById(int id);
+	Product getCpuById(int id);
 
-	Cpu updateCpuById(int id, Cpu obj);
+	Product updateCpuById(Cpu obj);
 
-	Cpu deleteCpuById(int id);
+	Product deleteCpuById(int id);
 
-	Cpu createCpu(Cpu obj);
+	Product createCpu(Cpu obj);
 
 }

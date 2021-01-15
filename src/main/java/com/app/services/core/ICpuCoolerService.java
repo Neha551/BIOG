@@ -2,7 +2,7 @@ package com.app.services.core;
 
 import java.util.List;
 
-import com.app.pojos.core.CPUCooler;
+import com.app.entities.core.CPUCooler;
 
 public interface ICpuCoolerService {
 	

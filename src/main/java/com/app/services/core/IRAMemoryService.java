@@ -2,7 +2,7 @@ package com.app.services.core;
 
 import java.util.List;
 
-import com.app.pojos.core.RAMMemory;
+import com.app.entities.core.RAMMemory;
 
 public interface IRAMemoryService {
 	List<RAMMemory> getAllRAMMemory();
