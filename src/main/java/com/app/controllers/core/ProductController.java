@@ -37,254 +37,247 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @RestController
 @RequestMapping("/products")
 public class ProductController {
-     //*****************           CORE(13)  *********************************** 
-	
-	//1
+	// ***************** CORE(13) ***********************************
+
+	// 1
 	@Autowired
 	private ICPUService cpuService;
-	
-	//2
+
+	// 2
 	@Autowired
 	private IRAMemoryService ramService;
-	
-	//3
+
+	// 3
 	@Autowired
 	private IPowerSupplyService powerSupplyService;
-	
-	//4
+
+	// 4
 	@Autowired
 	private ICpuCaseService cpuCaseService;
-	
-	//5
+
+	// 5
 	@Autowired
 	private ICpuCoolerService coolerService;
-	
-	//6
+
+	// 6
 	@Autowired
 	private IGraphicsCardService gpuService;
-	
-	//7
+
+	// 7
 	@Autowired
 	private IMotherboardService motherService;
-	
-	//8
+
+	// 8
 	@Autowired
-	private IMonitorService  monitorService;
-	
-	//9
+	private IMonitorService monitorService;
+
+	// 9
 	@Autowired
 	private IOpticalDriveService opticalDriveService;
-	
-	//10
+
+	// 10
 	@Autowired
-	private IOperatingSystemService  operatingSystemService;
-	
-	//11
+	private IOperatingSystemService operatingSystemService;
+
+	// 11
 	@Autowired
-	private ISoftwareService  softwareService;
-	
-	//12
+	private ISoftwareService softwareService;
+
+	// 12
 	@Autowired
-	private IStorageService  storageService;
-	
-	//13
+	private IStorageService storageService;
+
+	// 13
 	@Autowired
-	private IExternalStorageService  externalStorageService;
-	
-	
-	
-	//************************************* ACCESSORIES (5) ***************************************
-	//************************************* NETWORKING (3) ******************************************
-	//************************************* PERIPHERALS (5) ******************************************
-	
-	
+	private IExternalStorageService externalStorageService;
+
+	// ************************************* ACCESSORIES (5)
+	// ***************************************
+	// ************************************* NETWORKING (3)
+	// ******************************************
+	// ************************************* PERIPHERALS (5)
+	// ******************************************
+
 	@GetMapping("/{type}")
 	public ResponseEntity<?> showAllProductDetails(@PathVariable String type) {
 		switch (type) {
-		
-		//*******************************  CORE(13) *******************************************
+
+		// ******************************* CORE(13)
+		// *******************************************
 		case ProductConstants.CORE_CPU:
-			                                     System.out.println("in fetch all Cpu Details");
-		                                 	try{
-		                                 		List<Product> products = cpuService.getAllCpu();
-		                                 		 return new ResponseEntity<>(products, HttpStatus.OK);
-		                                 	   }
-			                    
-			                                  catch(Exception e)
-			                                  { 
-			                                	  // if (products.isEmpty())
-				                                   return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-			                                  } 
-			                               
+			System.out.println("in fetch all Cpu Details");
+			try {
+				List<Product> products = cpuService.getAllCpu();
+				return new ResponseEntity<>(products, HttpStatus.OK);
+			}
+
+			catch (Exception e) {
+				// if (products.isEmpty())
+				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
 
 		case ProductConstants.CORE_COOLER:
-			                                System.out.println("in fetch all Cpu Cooler Details");
-			                                try {
-			                                 List<Product> cooler = coolerService.getAllCpuCooler();
-			                              // non empty list
-			                                 return new ResponseEntity<>(cooler, HttpStatus.OK);
-			                                }
-		                                    	catch(Exception e) {
-		                                    		// chk if empty
-		                                    	
-			                                   // if (cooler.isEmpty())
-				                               return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-		                                    	}
-			                                     
-			                                     
-		case ProductConstants.CORE_CASE:     System.out.println("in fetch cpu cases products");
-		                                          try {
-                                                  List<Product> cpuCase = cpuCaseService.getAllCpuCase();
-                                                 // non empty list
-                                                    return new ResponseEntity<>(cpuCase, HttpStatus.OK);
-                                                             }
-                                                        	catch(Exception e) {
-           		                                       // chk if empty
-           	                  
-                                                               // if (cooler.isEmpty())
-                                                      return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-           	                                           }
-			                               
-		 
-		
-		
-		
+			System.out.println("in fetch all Cpu Cooler Details");
+			try {
+				List<Product> cooler = coolerService.getAllCpuCooler();
+				// non empty list
+				return new ResponseEntity<>(cooler, HttpStatus.OK);
+			} catch (Exception e) {
+				// chk if empty
+
+				// if (cooler.isEmpty())
+				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
+
+		case ProductConstants.CORE_CASE:
+			System.out.println("in fetch cpu cases products");
+			try {
+				List<Product> cpuCase = cpuCaseService.getAllCpuCase();
+				// non empty list
+				return new ResponseEntity<>(cpuCase, HttpStatus.OK);
+			} catch (Exception e) {
+				// chk if empty
+
+				// if (cooler.isEmpty())
+				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
+
 		case ProductConstants.CORE_GPU:
-			                                  System.out.println("in fetch gpu products");
-                                              try {  List<Product> gpu = gpuService.getAllGraphicsCard();
-                                             // non empty list
-                                                return new ResponseEntity<>(gpu, HttpStatus.OK);
-                                              }
-                                                 // chk if empty
-                                                catch(Exception e) {//if (gpu.isEmpty())
-                                             return new ResponseEntity<>(HttpStatus.NO_CONTENT);}
-                                        
+			System.out.println("in fetch gpu products");
+			try {
+				List<Product> gpu = gpuService.getAllGraphicsCard();
+				// non empty list
+				return new ResponseEntity<>(gpu, HttpStatus.OK);
+			}
+			// chk if empty
+			catch (Exception e) {// if (gpu.isEmpty())
+				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
+
 		case ProductConstants.CORE_MOBO:
-			                              System.out.println("in fetch motherboard products");
-                                        try { List<Product> motherboard = motherService.getAllMotherboard();
-                                         // non empty list
-                                         return new ResponseEntity<>(motherboard, HttpStatus.OK);}
-                                         
-                                          catch(Exception e) 
-                                              {// chk if empty
-                                        	  //if (motherboard.isEmpty())
-                                          return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-                                          }
-                                          
+			System.out.println("in fetch motherboard products");
+			try {
+				List<Product> motherboard = motherService.getAllMotherboard();
+				// non empty list
+				return new ResponseEntity<>(motherboard, HttpStatus.OK);
+			}
+
+			catch (Exception e) {// chk if empty
+									// if (motherboard.isEmpty())
+				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
+
 		case ProductConstants.CORE_MONITOR:
-			                               System.out.println("in fetch monitor products");
-                                        try { List<Product> monitor = monitorService.getAllMonitor();
-                                           // non empty list
-                                          return new ResponseEntity<>(monitor, HttpStatus.OK);}
-        
-                                        catch(Exception e) 
-                                           {// chk if empty
-       	                                       //if (motherboard.isEmpty())
-                                                      return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-                                                  }
-			                                 
-		case ProductConstants.CORE_OPTICAL:  
-			  System.out.println("in fetch optical drive products");
-              try { List<Product> optical = opticalDriveService.getAllOpticalDrive();
-                 // non empty list
-                return new ResponseEntity<>(optical, HttpStatus.OK);}
+			System.out.println("in fetch monitor products");
+			try {
+				List<Product> monitor = monitorService.getAllMonitor();
+				// non empty list
+				return new ResponseEntity<>(monitor, HttpStatus.OK);
+			}
 
-              catch(Exception e) 
-                 {// chk if empty
-                        //if (motherboard.isEmpty())
-                            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-                        }
-			
-		case ProductConstants.CORE_POWERSUPPLY:                   
-			  System.out.println("in fetch power supply  products");
-              try { List<Product> powerSupply = powerSupplyService.getAllPowerSupply();
-                 // non empty list
-                return new ResponseEntity<>(powerSupply, HttpStatus.OK);}
+			catch (Exception e) {// chk if empty
+									// if (motherboard.isEmpty())
+				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
 
-              catch(Exception e) 
-                 {// chk if empty
-                        //if (motherboard.isEmpty())
-                            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-                        }
-			
-		case ProductConstants.CORE_RAM:    
-			                             System.out.println("in fetch ram  products");
-                                       try { List<Product> ram = ramService.getAllRAMMemory();
-                                           // non empty list
-                                       return new ResponseEntity<>(ram, HttpStatus.OK);}
+		case ProductConstants.CORE_OPTICAL:
+			System.out.println("in fetch optical drive products");
+			try {
+				List<Product> optical = opticalDriveService.getAllOpticalDrive();
+				// non empty list
+				return new ResponseEntity<>(optical, HttpStatus.OK);
+			}
 
-                                       catch(Exception e) 
-                                     {// chk if empty
-                                        //if (motherboard.isEmpty())
-                                       return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-                                                }
-		
+			catch (Exception e) {// chk if empty
+									// if (motherboard.isEmpty())
+				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
+
+		case ProductConstants.CORE_POWERSUPPLY:
+			System.out.println("in fetch power supply  products");
+			try {
+				List<Product> powerSupply = powerSupplyService.getAllPowerSupply();
+				// non empty list
+				return new ResponseEntity<>(powerSupply, HttpStatus.OK);
+			}
+
+			catch (Exception e) {// chk if empty
+									// if (motherboard.isEmpty())
+				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
+
+		case ProductConstants.CORE_RAM:
+			System.out.println("in fetch ram  products");
+			try {
+				List<Product> ram = ramService.getAllRAMMemory();
+				// non empty list
+				return new ResponseEntity<>(ram, HttpStatus.OK);
+			}
+
+			catch (Exception e) {// chk if empty
+									// if (motherboard.isEmpty())
+				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
+
 		case ProductConstants.CORE_STORAGE:
-			
-			 System.out.println("in fetch storage products");
-             try { List<Product> storage = storageService.getAllStorage();
-                 // non empty list
-             return new ResponseEntity<>(storage, HttpStatus.OK);}
 
-             catch(Exception e) 
-           {// chk if empty
-              //if (motherboard.isEmpty())
-             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-                      }
-			
+			System.out.println("in fetch storage products");
+			try {
+				List<Product> storage = storageService.getAllStorage();
+				// non empty list
+				return new ResponseEntity<>(storage, HttpStatus.OK);
+			}
+
+			catch (Exception e) {// chk if empty
+									// if (motherboard.isEmpty())
+				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
+
 		case ProductConstants.CORE_EXTSTORAGE:
-			
-			 System.out.println("in fetch external storage products");
-             try { List<Product> externalStorage = externalStorageService.getAllExternalStorage();
-                 // non empty list
-             return new ResponseEntity<>(externalStorage, HttpStatus.OK);}
 
-             catch(Exception e) 
-           {// chk if empty
-              //if (motherboard.isEmpty())
-            	 
-             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-                      }
-             
-             
-		case ProductConstants.CORE_SOFTWARE:  
-			
-			 System.out.println("in fetch software products");
-             try { List<Product> software = softwareService.getAllSoftware();
-                 // non empty list
-             return new ResponseEntity<>(software, HttpStatus.OK);}
+			System.out.println("in fetch external storage products");
+			try {
+				List<Product> externalStorage = externalStorageService.getAllExternalStorage();
+				// non empty list
+				return new ResponseEntity<>(externalStorage, HttpStatus.OK);
+			}
 
-             catch(Exception e) 
-           {   // chk if empty
-              //if (motherboard.isEmpty())
-             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-                      }
-             
-             
+			catch (Exception e) {// chk if empty
+									// if (motherboard.isEmpty())
+
+				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
+
+		case ProductConstants.CORE_SOFTWARE:
+
+			System.out.println("in fetch software products");
+			try {
+				List<Product> software = softwareService.getAllSoftware();
+				// non empty list
+				return new ResponseEntity<>(software, HttpStatus.OK);
+			}
+
+			catch (Exception e) { // chk if empty
+									// if (motherboard.isEmpty())
+				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
+
 		case ProductConstants.CORE_OS:
-			
-			 System.out.println("in fetch external storage products");
-             try { List<Product> operatingSystem = operatingSystemService.getAllOperatingSystem();
-                 // non empty list
-             return new ResponseEntity<>(operatingSystem, HttpStatus.OK);}
 
-             catch(Exception e) 
-           {   // chk if empty
-              //if (motherboard.isEmpty())
-             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-                      }
-             
-             
-             
-             
-       
-             
-             
-             
-             
-             
-             
-			//************************************* ACCESSORIES (5) ***************************************
+			System.out.println("in fetch external storage products");
+			try {
+				List<Product> operatingSystem = operatingSystemService.getAllOperatingSystem();
+				// non empty list
+				return new ResponseEntity<>(operatingSystem, HttpStatus.OK);
+			}
+
+			catch (Exception e) { // chk if empty
+									// if (motherboard.isEmpty())
+				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
+
+			// ************************************* ACCESSORIES (5)
+			// ***************************************
 		case ProductConstants.ACC_CASE:
 			break;
 		case ProductConstants.ACC_FAN_CONTROLLER:
@@ -293,15 +286,17 @@ public class ProductController {
 			break;
 		case ProductConstants.ACC_UPS:
 			break;
-			
-			//************************************* NETWORKING (3) ******************************************
+
+		// ************************************* NETWORKING (3)
+		// ******************************************
 		case ProductConstants.NW_SOUND_CARD:
 			break;
 		case ProductConstants.NW_WIRED_CARD:
 			break;
 		case ProductConstants.NW_WIRELESS_CARD:
 			break;
-			//************************************* PERIPHERALS (5) ******************************************
+		// ************************************* PERIPHERALS (5)
+		// ******************************************
 		default:
 			break;
 		}
