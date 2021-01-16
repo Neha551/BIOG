@@ -4,7 +4,7 @@ public class ProductConstants {
 
 	 
 //	CORE COMPONENTS(13)
-	public static final String CORE_CPU="cpu";
+	 public static final String CORE_CPU="cpu";
 	 public static final String CORE_RAM="ram";
 	 public static final String CORE_MOBO="mother-board";
 	 public static final String CORE_STORAGE="storage";
@@ -13,7 +13,7 @@ public class ProductConstants {
 	 public static final String CORE_MONITOR="monitor";
 	 public static final String CORE_OPTICAL="optical";
 	 public static final String CORE_OS="os";
-	 public static final String CORE_CASE="CASE";
+	 public static final String CORE_CASE="case";
 	 public static final String CORE_SOFTWARE="software";
 	 public static final String CORE_POWERSUPPLY="power-supply";
 	 public static final String CORE_EXTSTORAGE="external-storage";

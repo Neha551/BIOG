@@ -203,6 +203,7 @@ public class ProductController {
 
 			catch (Exception e) {// chk if empty
 									// if (motherboard.isEmpty())
+				e.printStackTrace();
 				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 			}
 
@@ -244,7 +245,7 @@ public class ProductController {
 
 			catch (Exception e) {// chk if empty
 									// if (motherboard.isEmpty())
-
+				e.printStackTrace();
 				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 			}
 
@@ -273,6 +274,7 @@ public class ProductController {
 
 			catch (Exception e) { // chk if empty
 									// if (motherboard.isEmpty())
+				e.printStackTrace(); 
 				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 			}
 
