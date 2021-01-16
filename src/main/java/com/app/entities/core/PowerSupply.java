@@ -23,9 +23,11 @@ public class PowerSupply extends Product{
 	private int wattage;
 	
 	// semi/fully/none
+	@Enumerated(EnumType.STRING)
 	private PowerModularType modular;  
 	
 	//80+gold,80+silver //Enum
+	@Enumerated(EnumType.STRING)
 	private PowerEfficiencyType efficiency;
 	
 	
