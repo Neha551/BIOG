@@ -28,6 +28,7 @@ public class RAMMemory extends Product{
 	private int totalSize;
 	
 	//DDR4,DDR2,DDR..
+	@Enumerated(EnumType.STRING)
 	@Column(length=50)
 	private RamType type;
 	
