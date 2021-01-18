@@ -33,8 +33,12 @@ public class Cpu extends Product{
 		private boolean simMultiThread;
 		
 		//Intel HD Graphics,Radeon HD 8240,Intel UHD Graphics 610
-		@Column(name="graphics_type")
+		@Column(name="graphics_type",length=50)
 		private String graphicsType;
+		
+		
+		@Column(name="socket_type",length=50)
+		private String socketType;
 		
 		public Cpu() {
 			super();
@@ -42,7 +46,7 @@ public class Cpu extends Product{
 		
 
 
-		public Cpu(int id, int coreCount, float coreClock, int tdp, boolean integratedGraphics,
+		public Cpu(int id, int coreCount, float coreClock, int tdp, boolean integratedGraphics,String socketType,
 				boolean simMultiThread, String graphicsType,String name, String manufacturer, String brand, float price, boolean isAvailable, String imageUrl,
 				String color) {
 			super(name, manufacturer, brand, price, isAvailable, imageUrl, color);
@@ -53,6 +57,21 @@ public class Cpu extends Product{
 			this.integratedGraphics = integratedGraphics;
 			this.simMultiThread = simMultiThread;
 			this.graphicsType = graphicsType;
+			this.socketType=socketType;
+		}
+
+
+
+		
+		
+		public String getSocketType() {
+			return socketType;
+		}
+
+
+
+		public void setSocketType(String socketType) {
+			this.socketType = socketType;
 		}
 
 
@@ -122,7 +141,7 @@ public class Cpu extends Product{
 		public String toString() {
 			return "Cpu [   "+super.toString()+ "      id=" + id + ", coreCount=" + coreCount + ", coreClock=" + coreClock + ", tdp=" + tdp
 					+ ", integratedGraphics=" + integratedGraphics + ", simMultiThread=" + simMultiThread
-					+ ", graphicsType=" + graphicsType + "]";
+					+ ", graphicsType=" + graphicsType + "socketType="   +socketType+  "]";
 		}
 
 		

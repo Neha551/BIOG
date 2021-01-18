@@ -16,5 +16,7 @@ public interface ICPUService {
 	Product deleteCpuById(int id);
 
 	Product createCpu(Cpu obj);
+	
+	List<Product> getCpuByBrand(String brand);
 
 }

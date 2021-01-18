@@ -41,7 +41,7 @@ public class SoundCards extends Product {
 	 private String chipSet;
 	 
 	 @Enumerated(EnumType.STRING)
-	 @Column(name="interface",length=50)
+	 @Column(name="interface")
 	 private SoundCardInterface interFace;
 	 
 	 

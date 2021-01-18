@@ -2,7 +2,12 @@ package com.app.entities.core;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import com.app.entities.ConfiguredPc;
 import com.app.entities.enums.RamType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @Entity
@@ -44,13 +49,19 @@ public class RAMMemory extends Product{
 	private int columnAddressStrobe;
 	
 	
+//	 @ManyToOne(fetch = FetchType.LAZY, optional = false)
+//	 @JoinColumn(name = "pc_id", nullable = false)
+//	 @OnDelete(action = OnDeleteAction.CASCADE)
+//	 @JsonIgnore
+//	 private ConfiguredPc pc;
+	
 	public RAMMemory() {
 		super();
 	}
 	
 
 
-	public RAMMemory(int id, int noOfSticks,int ramSize, RamType type, int speed, float firstWordLatency, int columnAddressStrobe,
+	public RAMMemory(int id, int noOfSticks,int ramSize, RamType type, int speed, float firstWordLatency, int columnAddressStrobe,ConfiguredPc pc,
 			String color,String name, String manufacturer, String brand, float price, boolean isAvailable,String imageUrl) {
 		super(name, manufacturer, brand, price, isAvailable, imageUrl, color);
 		this.id = id;
@@ -60,8 +71,9 @@ public class RAMMemory extends Product{
 		this.speed = speed;
 		this.firstWordLatency = firstWordLatency;
 		this.columnAddressStrobe = columnAddressStrobe;
-		
+		//this.pc =pc;
 	}
+
 
 
 
@@ -164,7 +176,7 @@ public class RAMMemory extends Product{
 	public String toString() {
 		return "RAMMemory [ "+super.toString()+"      id=" + id + ", noOfSticks=" + noOfSticks + ", ramSize=" + ramSize + ", totalSize="
 				+ totalSize + ", type=" + type + ", speed=" + speed + ", firstWordLatency=" + firstWordLatency
-				+ ", columnAddressStrobe=" + columnAddressStrobe +  "]";
+				+ ", columnAddressStrobe=" + columnAddressStrobe +      "]";  //"pcid=    "+pc+ 
 	}
 
 

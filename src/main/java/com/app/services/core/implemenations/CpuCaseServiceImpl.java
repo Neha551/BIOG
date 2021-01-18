@@ -48,7 +48,7 @@ public class CpuCaseServiceImpl implements ICpuCaseService{
 		Optional<CPUCase> optional = cpuCaseRepo.findById(obj.getId());
 		if (optional.isPresent())
 			return cpuCaseRepo.save(obj); // update
-		// if product is not found : throw custom exception
+		// if cpu case is not found : throw custom exception
 		throw new ProductNotFoundException("Cpu case Not Found : Invalid Cpu  Case id " + obj.getId());
 
 		
@@ -64,7 +64,7 @@ public class CpuCaseServiceImpl implements ICpuCaseService{
 
 					return optional.get();
 				} else
-					// if product is not found : throw custom exception
+					// if cpu case is not found : throw custom exception
 					throw new ProductNotFoundException("Cpu Case Not Found : Invalid Cpu Case id " + id);
 
 	}
