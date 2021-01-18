@@ -4,12 +4,20 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import com.app.entities.ConfiguredPc;
 import com.app.entities.enums.ExternalStorageType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @Entity
@@ -35,14 +43,17 @@ public class ExternalStorage extends Product{
 	private int capacity;
 	
 	
+//	 @ManyToOne(fetch = FetchType.LAZY, optional = false)
+//	 @JoinColumn(name = "pc_id", nullable = false)
+//	 @OnDelete(action = OnDeleteAction.CASCADE)
+//	 @JsonIgnore
+//	 private ConfiguredPc pc;
+	
+	
+	
 	public ExternalStorage() {
 		super();
 	}
-
-
-	
-
-
 
 
 	public ExternalStorage(int id, ExternalStorageType type, String interFace, int capacity,String name, String manufacturer, String brand, float price, boolean isAvailable,

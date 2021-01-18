@@ -51,6 +51,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @RestController
 @CrossOrigin
 @RequestMapping("/products")
+@CrossOrigin
 public class ProductController {
 	// ***************** CORE(13) *********************
 
@@ -658,9 +659,40 @@ public class ProductController {
 				System.out.println("err in controller " + e);
 				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 			}
+<<<<<<< HEAD
 
 			// ************************************* ACCESSORIES (5)
 			// ***************************************
+=======
+			
+			
+		case ProductConstants.CORE_OS:
+			
+			
+			System.out.println("in operatingSystem dtls " + id);
+			try {
+				return ResponseEntity.ok(operatingSystemService.getOperatingSystemById(id));
+			} catch (RuntimeException e) {
+				System.out.println("err in controller " + e);
+				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			}
+			
+			                          
+		case ProductConstants.CORE_SOFTWARE:
+			
+			System.out.println("in  software dtls " + id);
+			try {
+				return ResponseEntity.ok( softwareService.getSoftwareById(id));
+			} catch (RuntimeException e) {
+				System.out.println("err in controller " + e);
+				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			}
+			
+			
+			
+			
+		//************************************* ACCESSORIES (5) ***************************************
+>>>>>>> e67f0b512318344ecd381f5b6e74a765d258a9b7
 		case ProductConstants.ACC_CASE:
 
 			System.out.println("in caseAcc dtls " + id);
@@ -672,32 +704,170 @@ public class ProductController {
 			}
 
 		case ProductConstants.ACC_FAN_CONTROLLER:
+<<<<<<< HEAD
 
 			System.out.println("in caseAcc dtls " + id);
+=======
+			
+			
+			System.out.println("in fanControllerAcc dtls " + id);
+>>>>>>> e67f0b512318344ecd381f5b6e74a765d258a9b7
 			try {
-				return ResponseEntity.ok(caseAccService.getCaseAccessoryById(id));
+				return ResponseEntity.ok(fanControllerAccService.getFanControllerAccessoryById(id));
 			} catch (RuntimeException e) {
 				System.out.println("err in controller " + e);
 				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 			}
 
 		case ProductConstants.ACC_THERMAL_COMPOUND:
+<<<<<<< HEAD
 
+=======
+			
+			
+			System.out.println("in thermalAcc dtls " + id);
+			try {
+				return ResponseEntity.ok(thermalAccService.getThermalCompoundAccessoryById(id));
+			} catch (RuntimeException e) {
+				System.out.println("err in controller " + e);
+				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			}
+			
+>>>>>>> e67f0b512318344ecd381f5b6e74a765d258a9b7
 		case ProductConstants.ACC_UPS:
+			
+			System.out.println("in tupsAcc dtls " + id);
+			try {
+				return ResponseEntity.ok(upsAccService.getUPSAccessoryById(id));
+			} catch (RuntimeException e) {
+				System.out.println("err in controller " + e);
+				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			}
+			
+			
 		case ProductConstants.ACC_CASE_FAN:
+<<<<<<< HEAD
 			// ************************************* NETWORKING (3)
 			// ******************************************
 		case ProductConstants.NW_SOUND_CARD:
 
+=======
+			
+			          
+			System.out.println("in caseFanAcc dtls " + id);
+			try {
+				return ResponseEntity.ok(caseFanAccService.getCaseFanAccessoryById(id));
+			} catch (RuntimeException e) {
+				System.out.println("err in controller " + e);
+				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			}
+			
+		//************************************* NETWORKING (3) ******************************************
+		
+		case ProductConstants.NW_SOUND_CARD:
+			
+			
+			System.out.println("in soundCard dtls " + id);
+			try {
+				return ResponseEntity.ok(soundCardService.getSoundCardById(id));
+			} catch (RuntimeException e) {
+				System.out.println("err in controller " + e);
+				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			}
+			
+>>>>>>> e67f0b512318344ecd381f5b6e74a765d258a9b7
 		case ProductConstants.NW_WIRED_CARD:
+			
+			
+			System.out.println("in wired dtls " + id);
+			try {
+				return ResponseEntity.ok(wiredService.getWiredNetworkAdapterById(id));
+			} catch (RuntimeException e) {
+				System.out.println("err in controller " + e);
+				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			}
+			
+			
 		case ProductConstants.NW_WIRELESS_CARD:
+<<<<<<< HEAD
 			// ************************************* PERIPHERALS (5)
 			// ******************************************
+=======
+			
+			
+			
+			System.out.println("in wireless dtls " + id);
+			try {
+				return ResponseEntity.ok(wirelessService.getWireLessNetworkAdapterById(id));
+			} catch (RuntimeException e) {
+				System.out.println("err in controller " + e);
+				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			}
+			
+			
+			
+			//************************************* PERIPHERALS (5) ******************************************
+>>>>>>> e67f0b512318344ecd381f5b6e74a765d258a9b7
 		case ProductConstants.PERI_HEADPHONES:
+			
+			
+			System.out.println("in headphone dtls " + id);
+			try {
+				return ResponseEntity.ok(headphoneService.getHeadphoneById(id));
+			} catch (RuntimeException e) {
+				System.out.println("err in controller " + e);
+				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			}
 		case ProductConstants.PERI_KEYBOARD:
+			
+			
+			System.out.println("in keyboard dtls " + id);
+			try {
+				return ResponseEntity.ok(keyboardService.getKeyboardById(id));
+			} catch (RuntimeException e) {
+				System.out.println("err in controller " + e);
+				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			}
+			
+			
 		case ProductConstants.PERI_MICE:
+<<<<<<< HEAD
 		case ProductConstants.PERI_SPEAKER:
+=======
+			
+			
+			
+			System.out.println("in mice dtls " + id);
+			try {
+				return ResponseEntity.ok(miceService.getMiceById(id));
+			} catch (RuntimeException e) {
+				System.out.println("err in controller " + e);
+				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			}
+			
+			
+		case ProductConstants.PERI_SPEAKER:	
+			
+			
+			System.out.println("in speaker dtls " + id);
+			try {
+				return ResponseEntity.ok(speakerService.getSpeakerById(id));
+			} catch (RuntimeException e) {
+				System.out.println("err in controller " + e);
+				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			}
+			
+			
+>>>>>>> e67f0b512318344ecd381f5b6e74a765d258a9b7
 		case ProductConstants.PERI_WEBCAM:
+			
+			System.out.println("in webcam dtls " + id);
+			try {
+				return ResponseEntity.ok(webcamService.getWebcamById(id));
+			} catch (RuntimeException e) {
+				System.out.println("err in controller " + e);
+				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			}
 		default:
 			break;
 		}
@@ -706,9 +876,16 @@ public class ProductController {
 
 	}
 
+	
+	
+//################################################ DELETE BY ID #############################################################################
+	
+	
+	
 	@DeleteMapping("/{type}/{id}")
 	public Product deleteCpuDetailById(@PathVariable int id, @PathVariable String type) {
 		switch (type) {
+<<<<<<< HEAD
 		// ******************************* CORE(13)
 		// *******************************************
 		case ProductConstants.CORE_CPU:
@@ -759,6 +936,56 @@ public class ProductController {
 			break;
 		}
 		if (type.equalsIgnoreCase("cpu"))
+=======
+		
+		//*******************************  CORE(13) *******************************************
+				case ProductConstants.CORE_CPU:
+				
+				case ProductConstants.CORE_COOLER:
+					
+				case ProductConstants.CORE_CASE:
+					
+				case ProductConstants.CORE_GPU:
+				
+				case ProductConstants.CORE_MOBO:
+					
+				case ProductConstants.CORE_MONITOR:
+				
+				case ProductConstants.CORE_OPTICAL:
+					
+				case ProductConstants.CORE_POWERSUPPLY:
+				
+				case ProductConstants.CORE_RAM:
+					
+				case ProductConstants.CORE_STORAGE:
+				case ProductConstants.CORE_EXTSTORAGE:	
+				case ProductConstants.CORE_OS:
+				case ProductConstants.CORE_SOFTWARE:
+					
+				//************************************* ACCESSORIES (5) ***************************************
+				case ProductConstants.ACC_CASE:
+					
+				case ProductConstants.ACC_FAN_CONTROLLER:
+					
+				case ProductConstants.ACC_THERMAL_COMPOUND:
+					
+				case ProductConstants.ACC_UPS:
+				case ProductConstants.ACC_CASE_FAN:
+				//************************************* NETWORKING (3) ******************************************
+				case ProductConstants.NW_SOUND_CARD:
+					
+				case ProductConstants.NW_WIRED_CARD:
+				case ProductConstants.NW_WIRELESS_CARD:
+					//************************************* PERIPHERALS (5) ******************************************
+				case ProductConstants.PERI_HEADPHONES:
+				case ProductConstants.PERI_KEYBOARD:
+				case ProductConstants.PERI_MICE:
+				case ProductConstants.PERI_SPEAKER:	
+				case ProductConstants.PERI_WEBCAM:
+				default:
+					break;
+				}		if (type.equalsIgnoreCase("cpu"))
+>>>>>>> e67f0b512318344ecd381f5b6e74a765d258a9b7
 			;
 		return cpuService.deleteCpuById(id);
 	}
@@ -768,9 +995,13 @@ public class ProductController {
 //		  return service.updateCpuById(id, obj);
 //	  }
 
+	
+//################################################ CREATE PRODUCT #############################################################################
+	
 	@PostMapping("/{type}")
 	public Product createProduct(@RequestBody String product, @PathVariable String type) {
 		switch (type) {
+<<<<<<< HEAD
 		// ******************************* CORE(13)
 		// *******************************************
 		case ProductConstants.CORE_CPU:
@@ -821,6 +1052,57 @@ public class ProductController {
 			break;
 		}
 		if (type.equalsIgnoreCase(ProductConstants.CORE_CPU)) {
+=======
+		
+		//*******************************  CORE(13) *******************************************
+				case ProductConstants.CORE_CPU:
+				
+				case ProductConstants.CORE_COOLER:
+					
+				case ProductConstants.CORE_CASE:
+					
+				case ProductConstants.CORE_GPU:
+				
+				case ProductConstants.CORE_MOBO:
+					
+				case ProductConstants.CORE_MONITOR:
+				
+				case ProductConstants.CORE_OPTICAL:
+					
+				case ProductConstants.CORE_POWERSUPPLY:
+				
+				case ProductConstants.CORE_RAM:
+					
+				case ProductConstants.CORE_STORAGE:
+				case ProductConstants.CORE_EXTSTORAGE:	
+					
+				case ProductConstants.CORE_OS:
+				case ProductConstants.CORE_SOFTWARE:
+					
+				//************************************* ACCESSORIES (5) ***************************************
+				case ProductConstants.ACC_CASE:
+					
+				case ProductConstants.ACC_FAN_CONTROLLER:
+					
+				case ProductConstants.ACC_THERMAL_COMPOUND:
+					
+				case ProductConstants.ACC_UPS:
+				case ProductConstants.ACC_CASE_FAN:
+				//************************************* NETWORKING (3) ******************************************
+				case ProductConstants.NW_SOUND_CARD:
+					
+				case ProductConstants.NW_WIRED_CARD:
+				case ProductConstants.NW_WIRELESS_CARD:
+					//************************************* PERIPHERALS (5) ******************************************
+				case ProductConstants.PERI_HEADPHONES:
+				case ProductConstants.PERI_KEYBOARD:
+				case ProductConstants.PERI_MICE:
+				case ProductConstants.PERI_SPEAKER:	
+				case ProductConstants.PERI_WEBCAM:
+				default:
+					break;
+				}		if (type.equalsIgnoreCase(ProductConstants.CORE_CPU)) {
+>>>>>>> e67f0b512318344ecd381f5b6e74a765d258a9b7
 			try {
 				Cpu newCpu = new ObjectMapper().readValue(product, Cpu.class);
 				cpuService.createCpu(newCpu);
@@ -835,9 +1117,13 @@ public class ProductController {
 		return null;
 	}
 
+	
+//################################################ UPDATE PRODUCT #############################################################################
+	
 	@PutMapping("/{type}/{id}")
 	public ResponseEntity<?> updateProduct(@RequestBody Cpu product, @PathVariable String type, @PathVariable int id) {
 		switch (type) {
+<<<<<<< HEAD
 		// ******************************* CORE(13)
 		// *******************************************
 		case ProductConstants.CORE_CPU:
@@ -887,6 +1173,55 @@ public class ProductController {
 		default:
 			break;
 		}
+=======
+		//*******************************  CORE(13) *******************************************
+				case ProductConstants.CORE_CPU:
+				
+				case ProductConstants.CORE_COOLER:
+					
+				case ProductConstants.CORE_CASE:
+					
+				case ProductConstants.CORE_GPU:
+				
+				case ProductConstants.CORE_MOBO:
+					
+				case ProductConstants.CORE_MONITOR:
+				
+				case ProductConstants.CORE_OPTICAL:
+					
+				case ProductConstants.CORE_POWERSUPPLY:
+				
+				case ProductConstants.CORE_RAM:
+					
+				case ProductConstants.CORE_STORAGE:
+				case ProductConstants.CORE_EXTSTORAGE:	
+				case ProductConstants.CORE_OS:
+				case ProductConstants.CORE_SOFTWARE:
+					
+				//************************************* ACCESSORIES (5) ***************************************
+				case ProductConstants.ACC_CASE:
+					
+				case ProductConstants.ACC_FAN_CONTROLLER:
+					
+				case ProductConstants.ACC_THERMAL_COMPOUND:
+					
+				case ProductConstants.ACC_UPS:
+				case ProductConstants.ACC_CASE_FAN:
+				//************************************* NETWORKING (3) ******************************************
+				case ProductConstants.NW_SOUND_CARD:
+					
+				case ProductConstants.NW_WIRED_CARD:
+				case ProductConstants.NW_WIRELESS_CARD:
+					//************************************* PERIPHERALS (5) ******************************************
+				case ProductConstants.PERI_HEADPHONES:
+				case ProductConstants.PERI_KEYBOARD:
+				case ProductConstants.PERI_MICE:
+				case ProductConstants.PERI_SPEAKER:	
+				case ProductConstants.PERI_WEBCAM:
+				default:
+					break;
+				}
+>>>>>>> e67f0b512318344ecd381f5b6e74a765d258a9b7
 		System.out.println("in update product " + product);
 		try {
 			return ResponseEntity.ok(cpuService.updateCpuById(product));

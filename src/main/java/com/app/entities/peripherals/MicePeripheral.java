@@ -20,7 +20,7 @@ public class MicePeripheral extends Product{
 	
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name="tarcking_method")
+	@Column(name="tracking_method")
 	private MiceTrackingMethod trackingMethod;
 	
 	@Enumerated(EnumType.STRING)

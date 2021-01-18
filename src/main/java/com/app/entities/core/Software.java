@@ -2,12 +2,20 @@ package com.app.entities.core;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import com.app.entities.ConfiguredPc;
 import com.app.entities.enums.SoftwareType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @Entity
@@ -25,6 +33,17 @@ public class Software extends Product{
 	@Column(name="media_type",length=50)
 	private String mediaType;
 	
+	
+//	 @ManyToOne(fetch = FetchType.LAZY, optional = false)
+//	 @JoinColumn(name = "pc_id", nullable = false)
+//	 @OnDelete(action = OnDeleteAction.CASCADE)
+//	 @JsonIgnore
+//	 private ConfiguredPc pc;
+	
+	
+	
+	
+	
 	public Software() {
 		super();
 	}
@@ -36,6 +55,15 @@ public class Software extends Product{
 		this.mediaType = mediaType;
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public int getId() {
 		return id;
 	}

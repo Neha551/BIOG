@@ -3,6 +3,7 @@ package com.app.utils;
 public class ProductConstants {
 
 //	CORE COMPONENTS(13)
+<<<<<<< HEAD
 	public static final String CORE_CPU = "cpu";
 	public static final String CORE_RAM = "ram";
 	public static final String CORE_MOBO = "mother-board";
@@ -17,6 +18,23 @@ public class ProductConstants {
 	public static final String CORE_POWERSUPPLY = "power-supply";
 	public static final String CORE_EXTSTORAGE = "external-storage";
 
+=======
+	
+	public static final String CORE_CPU="cpu";
+	 public static final String CORE_RAM="ram";
+	 public static final String CORE_MOBO="mother-board";
+	 public static final String CORE_STORAGE="storage";
+	 public static final String CORE_COOLER="cooler";
+	 public static final String CORE_GPU="gpu";
+	 public static final String CORE_MONITOR="monitor";
+	 public static final String CORE_OPTICAL="optical";
+	 public static final String CORE_OS="os";
+	 public static final String CORE_CASE="case";
+	 public static final String CORE_SOFTWARE="software";
+	 public static final String CORE_POWERSUPPLY="power-supply";
+	 public static final String CORE_EXTSTORAGE="external-storage";
+	 
+>>>>>>> e67f0b512318344ecd381f5b6e74a765d258a9b7
 //	 ACCESSORIES(5)
 
 	public static final String ACC_CASE = "CASE-ACC";
